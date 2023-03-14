@@ -1,8 +1,24 @@
 # Starve-free-and-Deadlock-free-Dining-Philosophers-problem
 This repo contains an implementation to solve the Dining Philosophers Problem using C without Starvation and Deadlock.
 ![alt dining philosophers problem](https://img.youtube.com/vi/kwxrt-LWryQ/0.jpg)
+# The Problem
 The Dining philosophers is a synchronization problem which is used to evaluate situations where there is a need of allocating multiple resources to multiple processes. The problem is:
 
 Consider there are **five philosophers** sitting around a circular dining table. The dining table has **five forks** and a bowl of food in the middle.
 At any instant, a philosopher is either **eating** or **thinking**. When a philosopher wants to eat, he uses *two forks* - one from their left and one from their right. When a philosopher wants to think, he keeps down both forks at their original place.
 Eating is not limited by the remaining amounts of food;
+# Solution
+The classical solution of this problem is using semaphores and the pseudocode for philosopher i looks like below:
+```cpp
+semaphore chopsticks[n] //where n is the number of philosophers 
+```
+```cpp
+wait(chopsticks[i]);
+wait(chopsticks[(i+1)%5];
+/*eat*/
+signal(chopsticks[(i+1)%5]);
+signal(chopsticks[i]);
+```
+We see that this solution can result in deadlock if all the philosophers pickup their left forks. Also starving of a philosopher to death is possible if each time only 2-3 philosophers are eating and the one ready never gets a chance for a long time is definitely possible with our algorithm.
+Another method is using Monitors which are high level constructs present in high level programming languages like Cpp, Java.
+```cpp
