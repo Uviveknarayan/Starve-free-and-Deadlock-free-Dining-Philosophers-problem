@@ -23,4 +23,6 @@ We see that this solution can result in deadlock if all the philosophers pickup 
 Another method is using Monitors which are high level constructs present in high level programming languages like Cpp, Java.
 ```cpp
 ```
-Now, finally let's see the starve free and deadlock free implementation of the Dining Philosophers problem. There are many ways to ensure this but we have implemented the method given in the book [https://bcs.wiley.com/he-bcs/Books?action=index&itemId=0471694665&itemTypeId=BKS&bcsId=2217]
+Now, finally let's see the starve free and deadlock free implementation of the Dining Philosophers problem. There are many ways to ensure this but we have implemented the method given in the [book] (https://bcs.wiley.com/he-bcs/Books?action=index&itemId=0471694665&itemTypeId=BKS&bcsId=2217).
+# Starve and Deadlock Free Solution
+The main idea behind this was about splitting the philosophers such that the even numbered picked up their left fork and odd numbered picked up their right fork so that two neighbouring philosophers would be fighting for the same fork or not asking for the fork atall and this happening alternately. In this process, only one philosopher gets his fork and he can take the other fork as the other neighbour would not ask for this fork, this way there will not be any deadlock. This is starvation free too as there can be at a maximum
