@@ -22,8 +22,6 @@ void * odd_philosopher(void* tid){
      printf("ate by %d\n",t);
     sem_post(&fork[t]);
     sem_post(&fork[(t+1)%n]);
-    
-   
 }
 int main() {
     for(int i=0;i<n;i++){
