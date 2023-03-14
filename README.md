@@ -22,3 +22,5 @@ signal(chopsticks[i]);
 We see that this solution can result in deadlock if all the philosophers pickup their left forks. Also starving of a philosopher to death is possible if each time only 2-3 philosophers are eating and the one ready never gets a chance for a long time is definitely possible with our algorithm.
 Another method is using Monitors which are high level constructs present in high level programming languages like Cpp, Java.
 ```cpp
+```
+Now, finally let's see the starve free and deadlock free implementation of the Dining Philosophers problem. There are many ways to ensure this but we have implemented the method given in the book [https://bcs.wiley.com/he-bcs/Books?action=index&itemId=0471694665&itemTypeId=BKS&bcsId=2217]
